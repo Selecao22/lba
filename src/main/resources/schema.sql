@@ -1,3 +1,5 @@
+drop table if exists "exam_type", "journal", "mark", "student", "subject", "study_group", "study_plan";
+
 create table "study_group"
 (
     "id" identity not null primary key,
