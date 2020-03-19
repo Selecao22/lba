@@ -37,7 +37,7 @@ create table "study_plan"
 
 create table "student"
 (
-    "id" identity not null primary key,
+    "id" identity not null primary key auto_increment,
     "surname" text default null,
     "name" text default null,
     "second_name" text default null,
@@ -63,7 +63,8 @@ insert into "study_group" ("name")
 values ('Группа 1');
 
 insert into "student" ("surname", "name", "second_name", "study_group_id")
-values ('Языков', 'Никита', 'Григорьевич', '1');
+values ('Языков', 'Никита', 'Григорьевич', '1'),
+       ('Булгарезку', 'Евгений', 'Андреевич', '1');
 
 insert into "subject"
 values  (1, 'Проектирование информационных систем', 'ПрИС'),
@@ -105,4 +106,10 @@ values  (1, 1, 1, 1),
         (1, 3, 1, 1),
         (1, 4, 1, 5),
         (1, 5, 1, 5),
-        (1, 6, 1, 1);
+        (1, 6, 1, 1),
+        (2, 1, 1, 2),
+        (2, 2, 1, 3),
+        (2, 3, 1, 1),
+        (2, 4, 1, 5),
+        (2, 5, 1, 5),
+        (2, 6, 1, 1);
