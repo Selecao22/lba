@@ -22,6 +22,9 @@ public class StudentController {
         return studentJdbc.get(id);
     }
 
+    @GetMapping("/local")
+    public List<Student> getAllLocalStudents() { return studentJdbc.getAllLocal(); }
+
     @GetMapping("/student/all")
     public List<Student> getAllStudents()
     {

@@ -36,6 +36,11 @@ public class StudentJdbc
         return jdbcTemplate.queryForObject("SELECT * FROM \"student\" WHERE \"study_group_id\" = ?", this::mapAllStudents, id);
     }
 
+    public List<Student> getAllLocal()
+    {
+        return jdbcTemplate.queryForObject("SELECT * FROM \"student_local\"", this::mapAllStudents);
+    }
+
     public int add(@NotNull Student stud)
     {
         return jdbcTemplate.update("INSERT INTO \"student\" (\"surname\", \"name\", \"second_name\", \"study_group_id\") VALUES (?, ?, ?, ?)", stud.getSurName(), stud.getName(), stud.getSecondName(), stud.getStudyGroupId());
